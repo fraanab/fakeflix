@@ -1,0 +1,453 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --netflix-red: rgb(230, 8, 21) ;
+    font-family: Arial, sans-serif;
+}
+body{
+    background: #000;
+}
+
+
+
+
+
+
+/* hero - landing showcase */
+button{
+    cursor: pointer;
+}
+.landing{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/netflixnew.jpg');
+}
+.landing::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 130px 250px black, inset 0 -130px 250px black;
+}
+
+
+
+
+
+
+.header{
+    position: relative;
+    z-index: 2;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo img{
+    width: 170px;
+    transform: translate(25%, 50%);
+}
+.header .options{
+    transform: translate(-25%, 50%);
+}
+.header .options .signin{
+    background: var(--netflix-red);
+    padding: 7px 15px;
+    color: #fff;
+    border-radius: 5px;
+}
+.header .options .signin:hover{
+    background: rgb(230, 50, 21);
+}
+.header .options #lang{
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 6px;
+    padding-left: 30px;
+    margin: 0 20px;
+}
+.header .options #lang option{
+    background: #000;
+    color: #fff;
+}
+.header .fa-globe{
+    color: #fff;
+    transform: translate(3.2vw, 2px);
+}
+
+
+
+
+
+
+
+.landing .welcome{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.landing .titles{
+    position: relative;
+    color: #fff;
+    width: 40vw;
+    top: 25%;
+    margin: 0 auto;
+    z-index: 2;
+    text-align: center;
+}
+.landing .titles h1{
+    font-size: 3.7rem;
+}
+.landing .titles p{
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+.landing .email{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    top: 28vh;
+}
+.landing .email p{
+    margin-bottom: 15px;
+}
+.email .email-form {
+    display: flex;
+    flex-direction: row;
+}
+.email .email-form input{
+    border: none;
+    background: #fff;
+    padding: 20px 7px;
+    width: 30vw;
+    border-radius: 3px 0 0 3px;
+}
+.email .email-form button{
+    border: none;
+    padding: 12px 30px;
+    color: #fff;
+    background: var(--netflix-red);
+    font-size: 1.5rem;
+    border-radius: 0 3px 3px 0;
+}
+
+.email .email-form button:hover{
+    background: rgb(230, 50, 21);
+}
+
+
+
+
+/* enjoy */
+
+
+.tv{
+    width: 100vw;
+    height: 60vh;
+    border-top: 5px solid #444;
+    border-bottom: 5px solid #444;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 10vw;
+}
+.tv .enjoy{
+    width: 40vw;
+}
+.tv .enjoy h1{
+    font-size: 3rem;
+    width: 110%;
+}
+.tv .enjoy h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 15px;
+    width: 110%;
+}
+
+.tv video{
+    position: relative;
+    z-index: 1;
+    width: 24vw;
+    right: 0px;
+    transform: translate(-100px,0);
+}
+.tv img{
+    width: 30vw;
+    position: relative;
+    z-index: 2;
+    transform: translate(300px, 0px);
+    right: 0px;
+}
+
+
+
+
+
+.download{
+    width: 100vw;
+    height: 60vh;
+    border-bottom: 5px solid #444;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 10vw;
+    align-items: center;
+    overflow: hidden;
+}
+
+.download .downloadinfo{
+    width: 40vw;
+    margin-left: 13vw;
+}
+.download .downloadinfo h1{
+    font-size: 3rem;
+}
+.download .downloadinfo h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 15px;
+    width: 32.5vw;
+}
+.download img{
+    width: 30vw;
+    padding-top: 10%;
+}
+.download .download-popup{
+    content: 'Downloading';
+    color: #0af;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+    width: 290px;
+    height: 100px;
+    background: #000;
+    border: 2px solid #444;
+    border-radius: 15px;
+    transform: translate(79px,-105px);
+}
+.download .st-download h3{
+    color: #fff;
+}
+.loader{
+    border: 5px solid #3498db;
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
+.watch{
+    width: 100vw;
+    height: 60vh;
+    border-bottom: 5px solid #444;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10vw;
+    align-items: center;
+    overflow: hidden;
+}
+.watch .watchinfo{
+    width: 40vw;
+}
+.watch .watchinfo h1{
+    font-size: 3rem;
+}
+.watch .watchinfo h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 15px;
+    width: 32.5vw;
+}
+.watch .vid2 video{
+    position: relative;
+    z-index: 1;
+    width: 19vw;
+    right: 0;
+    transform: translate(235px, -216px);
+}
+.watch .vid2 img{
+    width: 30vw;
+    position: relative;
+    z-index: 2;
+    transform: translate(150px, 100px);
+    right: 0;
+}
+
+
+
+
+
+
+
+.create{
+    width: 100vw;
+    height: 60vh;
+    border-bottom: 5px solid #444;
+    background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 10vw;
+    align-items: center;
+    overflow: hidden;
+}
+.create .create-info{
+    width: 30vw;
+}
+.create .create-info h1{
+    font-size: 3rem;
+}
+.create .create-info h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 15px;
+    width: 32.5vw;
+}
+.create img{
+    width: 30vw;
+}
+
+
+
+
+
+
+
+
+
+.freq-questions{
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+    padding: 10vh 0;
+    border-bottom: 5px solid #444;
+}
+.freq-questions h1{
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 10vh;
+}
+.freq-questions .thequestions{
+    color: #fff;
+}
+.freq-questions .thequestions details{
+    width: 50vw;
+    margin-bottom: 10px;
+    background: #333;
+    padding: 1.5rem;
+    transition: height 0.5s ease;
+}
+.freq-questions .thequestions details summary{
+    display: flex;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+details[open] summary{padding-bottom: 1.5rem;height: 100%;}
+details:not([open]) summary{
+    padding-bottom: 1.5rem;
+    height: 0;
+}
+details summary::-webkit-details-marker { display:none; }
+
+.freq-questions .thequestions details .details-info{
+    padding-top: 1rem;
+    border-top: 1px solid #000;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #444;
+    width: 100vw;
+    height: 50vh;
+    padding: 100px 20vw;
+}
+footer .questions{
+    width: 100%;
+    margin-bottom: 25px;
+}
+footer table tr td{
+    font-size: 12px;
+    padding-right: 5rem;
+    padding-bottom: 1rem;
+}
+footer table tr td a{
+    text-decoration: none;
+    color: #444;
+}
+footer table tr td a:hover{color: #fff;}
+
+footer .language-select{
+    margin: 0 0 20px 0;
+}
+footer .language-select #lang{
+    background: rgba(0, 0, 0, 0.2);
+    color: #444;
+    padding: 1rem 0 1rem 40px;
+    border-radius: 3px;
+    width: 100%;
+}
+footer .language-select #lang option{
+    background: #000;
+    color: #fff;
+}
+footer .language-select .fa-globe{
+    color: #444;
+    transform: translate(1vw, 5vh);
+}
+footer p{
+    font-size: 12px;
+}
